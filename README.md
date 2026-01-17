@@ -133,6 +133,7 @@ I created resources for `Product`, `Category` and `Brand`.
 - **Global Search**: Search products by title, SKU, or description
 - **Bulk Actions**: Delete multiple products at once, update multiple products' stock
 
-## Screenshots
+## Coding Screen Capture
 
+See the `screen capture video.mp4` file in the project root.
 

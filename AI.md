@@ -52,8 +52,7 @@ have any questions before proceeding.
  
 - I later learned I didn't need to create a controller at all, so I deleted `HardwareController`
 - Most of my questions centered around proper usage of Filament.
-- I have an online `Claude` account, but I think also buying `Claude Code` locally would have been quicker.
+- I have an online `Claude` account, but I think also buying `Claude Code` and running it locally might have been quicker.
 - Learning how to use Filament feels similar to an older Laravel admin panel called `Nova`.
 
-### Screen Capture
 

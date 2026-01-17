@@ -25,6 +25,10 @@ class CategoryResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
+    /**
+     * @param Schema $schema
+     * @return Schema
+     */
     public static function form(Schema $schema): Schema
     {
         return $schema
@@ -36,6 +40,10 @@ class CategoryResource extends Resource
             ]);
     }
 
+    /**
+     * @param Table $table
+     * @return Table
+     */
     public static function table(Table $table): Table
     {
         return $table
