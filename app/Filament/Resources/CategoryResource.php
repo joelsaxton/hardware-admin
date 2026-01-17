@@ -25,10 +25,6 @@ class CategoryResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
-    /**
-     * @param Schema $schema
-     * @return Schema
-     */
     public static function form(Schema $schema): Schema
     {
         return $schema
@@ -65,7 +61,9 @@ class CategoryResource extends Resource
             ->defaultSort('category', 'asc')
             ->recordActions([
                 EditAction::make(),
-                DeleteAction::make(),
+                DeleteAction::make()
+                    ->modalHeading('Delete Category')
+                    ->modalDescription(fn (Category $record): string => "Are you sure you want to delete this category? This will also delete {$record->products()->count()} product(s)."),
             ]);
     }
 

@@ -61,7 +61,10 @@ class BrandResource extends Resource
             ->defaultSort('brand', 'asc')
             ->recordActions([
                 EditAction::make(),
-                DeleteAction::make(),
+                DeleteAction::make()
+                    ->modalHeading('Delete Brand')
+                    ->modalDescription(fn (Brand $record): string => "Are you sure you want to delete this brand? This will also delete {$record->products()->count()} product(s)."
+                    ),
             ]);
     }
 

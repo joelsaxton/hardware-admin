@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ProductResource\Pages;
 use App\Models\Product;
 use BackedEnum;
+use Filament\Actions\BulkAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -23,6 +24,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Support\Collection;
 use UnitEnum;
 
 class ProductResource extends Resource
@@ -80,7 +82,7 @@ class ProductResource extends Resource
                     ])
                     ->columns(2),
 
-                Section::make('Pricing & Inventory')
+                Section::make('Pricing, Inventory & Specs')
                     ->schema([
                         TextInput::make('price')
                             ->required()
@@ -192,6 +194,20 @@ class ProductResource extends Resource
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
+                    BulkAction::make('updateStock')
+                        ->label('Update Stock')
+                        ->icon('heroicon-o-archive-box')
+                        ->schema([
+                            TextInput::make('stock')
+                                ->label('New Stock Level')
+                                ->required()
+                                ->numeric()
+                                ->minValue(0),
+                        ])
+                        ->action(function (Collection $records, array $data): void {
+                            $records->each(fn ($record) => $record->update(['stock' => $data['stock']]));
+                        })
+                        ->deselectRecordsAfterCompletion(),
                 ]),
             ])
             ->defaultSort('sku', 'asc');

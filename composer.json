@@ -5,7 +5,7 @@
     "keywords": ["laravel", "filament", "admin"],
     "license": "MIT",
     "require": {
-        "php": "^8.5",
+        "php": "^8.4",
         "filament/filament": "^5.0",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10",
@@ -16,7 +16,8 @@
         "laravel/pint": "^1.18",
         "laravel/sail": "^1.37",
         "mockery/mockery": "^1.6",
-        "phpunit/phpunit": "^11.4"
+        "phpunit/phpunit": "^11.4",
+        "nunomaduro/collision": "^8.0"
     },
     "autoload": {
         "psr-4": {

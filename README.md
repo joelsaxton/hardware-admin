@@ -4,20 +4,22 @@ A Laravel 12 admin panel for hardware store inventory management, built with [Fi
 
 ## Notes
 
-- The Spatie Query Builder package in composer.json was not needed for this Filament app, but I just left it in to show what I like to use
-- I changed PHP version from 8.5 -> 8.4 after setting up 8.5 due to not found Docker image.
-- In answer to a previous question, I get my PHP information from PHP.net. I did read the 8.5 docs a while back but I could not recall the new features (https://www.php.net/releases/8.5/en.php)
+- The Spatie Query Builder package in `composer.json` was not needed for this Filament app, but I just left it in to show what I like to use.
+- I changed PHP version from `8.5` -> `8.4` after setting up 8.5 due to not found Docker image.
+- In answer to a previous question, I get some of my PHP information from signing up to `PHP.net`. I did read the version 8.5 docs a while back but I could not recall the new features during our interview (https://www.php.net/releases/8.5/en.php)
+- I added a test, but it's really just testing Filament's innards.
+- Lastly, the name of the Laravel admin panel I've used in the past is `Nova`
 
 ## Requirements
 
 - Docker Desktop
-- Git
+- Git CLI
 
 ## Quick Start
 
 ### 1. Clone the Repository
 
-```bash
+```
 git clone git@github.com:joelsaxton/hardware-admin.git
 ```
 or 
@@ -30,25 +32,25 @@ cd hardware-admin
 ```
 
 ### 2. Run the setup script
-```bash
+```
 ./setup.sh
 ```
 
 ### 3. Start Sail
 
-```bash
+```
 ./vendor/bin/sail up -d
 ```
 
 ### 4. Generate Application Key
 
-```bash
+```
 ./vendor/bin/sail artisan key:generate
 ```
 
-### 5. Run Migrations & Seed Database
+### 5. Run Migrations & Seed Database with Hardware Products, Categories and Brands
 
-```bash
+```
 ./vendor/bin/sail artisan migrate --seed
 ```
 
@@ -61,7 +63,7 @@ cd hardware-admin
 - **Email**: `admin@example.com`
 - **Password**: `password`
 
-## Common Sail Commands
+### Sail Commands
 
 ```bash
 # Start containers
@@ -89,27 +91,6 @@ cd hardware-admin
 ./vendor/bin/sail artisan migrate:fresh --seed
 ```
 
-## Project Structure
-
-```
-├── app/
-│   ├── Filament/
-│   │   └── Resources/
-│   │       └── ProductResource.php    # Filament CRUD resource
-│   ├── Http/
-│   │   └── Controllers/
-│   │       └── HardwareController.php # Traditional CRUD controller
-│   └── Models/
-│       ├── Brand.php
-│       ├── Category.php
-│       └── Product.php
-├── database/
-│   ├── migrations/
-│   └── seeders/
-│       └── DatabaseSeeder.php         # Seeds 100 products
-└── docker-compose.yml                 # Sail + PostgreSQL
-```
-
 ## Database Schema
 
 ### Products
@@ -131,22 +112,27 @@ cd hardware-admin
 ### Brands
 - Acme, Brown, Charlie, Delta, Edman
 
+
+#### Note - you can add/edit/delete `categories` and `brands`, too. You will receive a warning message if you're deleting a category or brand that is associated with existing products because they will cascade with the deletion.
+
+
+
 ## Packages Included
 
 - [Filament 5](https://filamentphp.com/) - Admin panel framework
-- [Spatie Laravel Query Builder](https://spatie.be/docs/laravel-query-builder) - API query building
-- [Laravel Pint](https://laravel.com/docs/pint) - Code style fixer
+- [Spatie Laravel Query Builder](https://spatie.be/docs/laravel-query-builder) - API query building (I did not use this as Filament handled all my requirements without it, but I am a fan)
+- [Laravel Pint](https://laravel.com/docs/pint) - Code style fixer. I used it many times in PHPStorm for fixing style issues. 
 
 ## Filament Features
 
-The ProductResource includes:
+I created resources for `Product`, `Category` and `Brand`.
 
-- **Table View**: Sortable, searchable list with SKU, title, category, brand, price, and stock
+- **Table View**: Sortable, searchable list with `SKU`, `title`, `category`, `brand`, `price`, and `stock`
 - **Filters**: Filter by category, brand, low stock, or out of stock
-- **Forms**: Create and edit products with validation
+- **Forms**: Create and edit products, categories and brands with validation
 - **Global Search**: Search products by title, SKU, or description
-- **Bulk Actions**: Delete multiple products at once
+- **Bulk Actions**: Delete multiple products at once, update multiple products' stock
 
-## License
+## Screenshots
 
-MIT
+
