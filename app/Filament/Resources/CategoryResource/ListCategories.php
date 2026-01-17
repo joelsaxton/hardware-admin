@@ -1,16 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\ProductResource\Pages;
+namespace App\Filament\Resources\CategoryResource\Pages;
 
-use App\Filament\Resources\ProductResource;
+use App\Filament\Resources\CategoryResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListProducts extends ListRecords
+class ListCategories extends ListRecords
 {
-    protected static string $resource = ProductResource::class;
-
-    protected ?string $defaultPaginationPageOption = '30';
+    protected static string $resource = CategoryResource::class;
 
     /**
      * @return array|Actions\Action[]|Actions\ActionGroup[]

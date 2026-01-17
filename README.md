@@ -18,7 +18,14 @@ A Laravel 12 admin panel for hardware store inventory management, built with [Fi
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone git@github.com:joelsaxton/hardware-admin.git
+```
+or 
+```
+git clone https://github.com/joelsaxton/hardware-admin.git
+```
+then
+```
 cd hardware-admin
 ```
 
@@ -27,34 +34,27 @@ cd hardware-admin
 ./setup.sh
 ```
 
-### 3. Environment Setup
-
-```bash
-cp .env.example .env
-```
-
-### 4. Start Sail
+### 3. Start Sail
 
 ```bash
 ./vendor/bin/sail up -d
 ```
 
-### 5. Generate Application Key
+### 4. Generate Application Key
 
 ```bash
 ./vendor/bin/sail artisan key:generate
 ```
 
-### 6. Run Migrations & Seed Database
+### 5. Run Migrations & Seed Database
 
 ```bash
 ./vendor/bin/sail artisan migrate --seed
 ```
 
-## Accessing the Application
+## Accessing the Filament Admin Panel
 
-- **Main Application**: http://localhost
-- **Filament Admin Panel**: http://localhost/admin
+- http://localhost/admin
 
 ### Admin Login Credentials
 
