@@ -132,6 +132,7 @@ I created resources for `Product`, `Category` and `Brand`.
 - **Forms**: Create and edit products, categories and brands with validation
 - **Global Search**: Search products by title, SKU, or description
 - **Bulk Actions**: Delete multiple products at once, update multiple products' stock
+- **TODO**: I went over time on this, but if I had more time I would have included the file export and image upload features.
 
 ## Coding Screen Capture
 
