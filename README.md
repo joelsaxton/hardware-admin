@@ -6,9 +6,6 @@ A Laravel 12 admin panel for hardware store inventory management, built with [Fi
 
 - The Spatie Query Builder package in `composer.json` was not needed for this Filament app, but I just left it in to show what I like to use.
 - I changed PHP version from `8.5` -> `8.4` after setting up 8.5 due to not found Docker image. I could have used another 8.5 image, but I decided to stick with a `laravelsail` image.
-- In answer to a previous question, I get some of my PHP information from signing up to `PHP.net`. I did read the version 8.5 docs a while back but I could not recall the new features during our interview (https://www.php.net/releases/8.5/en.php)
-- I added a test, but it's really just testing Filament's innards.
-- Lastly, the name of the Laravel admin panel I've used in the past is `Nova`
 
 ## Requirements
 
