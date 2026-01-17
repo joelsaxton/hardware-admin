@@ -12,7 +12,7 @@ A Laravel 12 admin panel for hardware store inventory management, built with [Fi
 
 ## Requirements
 
-- Docker Desktop
+- Docker Desktop - ensure this is running before proceeding
 - Git CLI
 
 ## Quick Start
@@ -32,6 +32,8 @@ cd hardware-admin
 ```
 
 ### 2. Run the setup script
+
+**NOTE**: Ensure your Docker Desktop is running before this step
 ```
 ./setup.sh
 ```

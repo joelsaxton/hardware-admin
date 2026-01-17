@@ -214,7 +214,7 @@ class DatabaseSeeder extends Seeder
                     'description' => $descriptions[$i % 5],
                     'category_id' => $category->id,
                     'brand_id' => $brand->id,
-                    'price' => rand(299, 29999), // $2.99 to $299.99
+                    'price' => rand(299, 29999) / 100, // 2.99 to 299.99
                     'stock' => rand(0, 500),
                     'sku' => sprintf('SKU-%05d', $skuCounter),
                     'weight' => round(rand(10, 5000) / 100, 2), // 0.10 to 50.00 lbs

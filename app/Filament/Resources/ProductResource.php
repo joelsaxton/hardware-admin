@@ -86,9 +86,10 @@ class ProductResource extends Resource
                     ->schema([
                         TextInput::make('price')
                             ->required()
-                            ->numeric()
+                            ->inputMode('decimal')
                             ->prefix('$')
-                            ->step(0.01),
+                            ->step(0.01)
+                            ->formatStateUsing(fn ($state) => $state ? number_format((float) $state, 2, '.', '') : null),
 
                         TextInput::make('stock')
                             ->required()
